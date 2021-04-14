@@ -6,8 +6,8 @@ import numpy as np
 
 def to_list(df):
     """
-    Create list of track & artists
+    Create list of NFTs
     """
     combined = df['combined']
-    track_artist = combined.tolist()
-    return track_artist
+    NFT_id = combined.tolist()
+    return NFT_id

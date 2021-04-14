@@ -1,7 +1,7 @@
 from os import getenv
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
-from .models import 
+from .models import to_list
 
 
 def create_app():
@@ -11,15 +11,15 @@ def create_app():
     def root():
         return render_template('base.html', title="Home")
 
-    @app.route("/music", methods = ["GET", "POST"]) 
+    @app.route("/input", methods = ["GET", "POST"]) 
     def input():
         """ 
-        Input user's favorite song.
-        Return list of recommended songs.
+        Input user's NFT.
+        Return reccomended value.
         """
         if request.method == "GET":
-            track_artist = to_list(df)
-            return render_template('input.html', data=track_artist)
+            NFT_id = to_list(df)
+            return render_template('input.html', data=NFT_id)
         
         if request.method == "POST":
             input = request.form.get("input")
